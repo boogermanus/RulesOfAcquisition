@@ -18,7 +18,9 @@ describe('RulesService', () => {
     expect(service.rules).toBeDefined();
   });
 
-  // describe('rules', () => {
-  //   it('should have length greater than zero')
-  // })
+  describe('rules', () => {
+    it('should have length greater than zero', () => {
+      expect(service.rules.length).toBeGreaterThan(0);
+    });
+  });
 });

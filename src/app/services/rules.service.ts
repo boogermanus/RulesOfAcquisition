@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IRule } from '../interfaces/irule';
 
 @Injectable({
@@ -11,5 +13,7 @@ export class RulesService {
   public rules(): IRule[] {
     return this._rules;
   }
-  constructor() { }
+  constructor(private httpClient: HttpClient) {
+    
+  }
 }
