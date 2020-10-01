@@ -28,4 +28,15 @@ describe('RulesService', () => {
       expect(rules.length).toBeGreaterThan(0);
     });
   });
+
+  describe('getRandomRule()', () => {
+    it('should have method', () => {
+      expect(service.getRandomRule).toBeDefined();
+    });
+
+    it('should return a rule', () => {
+      const rule = service.getRandomRule();
+      expect(rule).toBeTruthy();
+    });
+  });
 });

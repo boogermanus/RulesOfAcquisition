@@ -14,4 +14,9 @@ export class RulesService {
   getRules(): IRule[] {
     return this._rules;
   }
+
+  getRandomRule(): IRule {
+    const random = Math.floor(Math.random() * this._rules.length);
+    return this._rules[random];
+  }
 }
