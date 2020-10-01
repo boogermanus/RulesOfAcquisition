@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IRule } from '../interfaces/irule';
+import { RulesService } from '../services/rules.service';
 
 @Component({
   selector: 'app-rule-generator',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RuleGeneratorComponent implements OnInit {
 
-  constructor() { }
+  rule: IRule = {
+    number: 0,
+    rule: '',
+    source: '',
+  };
+
+  constructor(private rulesService: RulesService) { }
 
   ngOnInit(): void {
   }
 
+  random(): void {
+    this.rule = this.rulesService.getRandomRule();
+  }
 }
