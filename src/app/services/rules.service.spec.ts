@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { RulesService } from './rules.service';
@@ -6,7 +7,9 @@ describe('RulesService', () => {
   let service: RulesService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [HttpClient]
+    });
     service = TestBed.inject(RulesService);
   });
 
@@ -14,13 +17,15 @@ describe('RulesService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should have rules', () => {
-    expect(service.rules).toBeDefined();
-  });
+  describe('getRules()', () => {
+    it('should have method', () => {
+      expect(service.getRules).toBeDefined();
+    });
 
-  describe('rules', () => {
-    it('should have length greater than zero', () => {
-      expect(service.rules.length).toBeGreaterThan(0);
+    it('should should have at least one rule', () => {
+      const rules = service.getRules();
+
+      expect(rules.length).toBeGreaterThan(0);
     });
   });
 });

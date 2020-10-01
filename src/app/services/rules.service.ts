@@ -1,19 +1,17 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { IRule } from '../interfaces/irule';
-
+import { rules } from '../data/rules';
 @Injectable({
   providedIn: 'root'
 })
 export class RulesService {
 
-  private _rules: IRule[];
+  private _rules: IRule[] = rules;
 
-  public rules(): IRule[] {
-    return this._rules;
+  constructor() {
   }
-  constructor(private httpClient: HttpClient) {
-    
+
+  getRules(): IRule[] {
+    return this._rules;
   }
 }
