@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RuleGeneratorComponent } from './rule-generator/rule-generator.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RuleGeneratorComponent } from './rule-generator/rule-generator.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
