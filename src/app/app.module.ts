@@ -8,12 +8,14 @@ import { RuleGeneratorComponent } from './rule-generator/rule-generator.componen
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
 import { RuleViewComponent } from './rule-view/rule-view.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RuleGeneratorComponent,
-    RuleViewComponent
+    RuleViewComponent,
+    NavMenuComponent
   ],
   imports: [
     BrowserModule,
