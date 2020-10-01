@@ -1,26 +1,11 @@
 <div class="mt-2">
-    <mat-card style="height: 200px;">
+    <mat-card style="height: 125px;">
+        <mat-card-title><label>Rule #{{rule.number === 0 ? '' : rule.number}}</label></mat-card-title>
+        <mat-card-subtitle>Source: {{rule.source}}</mat-card-subtitle>
         <mat-card-content>
             <div class="row">
-                <div class="col-sm-1">
-                    <label>#</label>
-                    <span>{{rule.number === 0 ? '' : rule.number}}</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1">
-                    <label>Rule</label>
-                </div>
                 <div class="col-sm-8">
                     <p>{{rule.rule}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-1">
-                    <label>Source</label>
-                </div>
-                <div class="col-sm-8">
-                    <p>{{rule.source}}</p>
                 </div>
             </div>
         </mat-card-content>
