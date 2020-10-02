@@ -1,13 +1,16 @@
 <div class="mt-2">
-    <mat-card style="height: 150px;">
+    <mat-card>
         <mat-card-title><label>Rule #{{rule.number === 0 ? '' : rule.number}}</label></mat-card-title>
         <mat-card-subtitle>Source: {{rule.source}}</mat-card-subtitle>
         <mat-card-content>
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-12">
                     <p>{{rule.rule}}</p>
                 </div>
             </div>
         </mat-card-content>
+        <mat-card-actions>
+            <button mat-icon-button><mat-icon>star_border</mat-icon></button>
+        </mat-card-actions>
     </mat-card>
 </div>
