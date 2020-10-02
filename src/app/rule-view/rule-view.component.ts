@@ -9,10 +9,15 @@ import { IRule } from '../interfaces/irule';
 export class RuleViewComponent implements OnInit {
 
   @Input()rule: IRule;
+  favorite = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onStarClick() {
+    this.favorite = !this.favorite;
   }
 
 }

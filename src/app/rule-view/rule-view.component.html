@@ -10,7 +10,7 @@
             </div>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-icon-button><mat-icon>star_border</mat-icon></button>
+            <button mat-icon-button (click)="onStarClick()"><mat-icon [ngStyle]="{'color': favorite ? 'yellow' : ''}">star_border</mat-icon></button>
         </mat-card-actions>
     </mat-card>
 </div>
