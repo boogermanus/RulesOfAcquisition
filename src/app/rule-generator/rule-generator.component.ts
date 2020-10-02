@@ -18,6 +18,7 @@ export class RuleGeneratorComponent implements OnInit {
   constructor(private rulesService: RulesService) { }
 
   ngOnInit(): void {
+    this.rule = this.rulesService.getRandomRule();
   }
 
   random(): void {
