@@ -98,4 +98,21 @@ describe('FavoritesService', () => {
       expect(data.length).toEqual(0);
     });
   });
+
+  describe('isFavorite()', () => {
+    it('should have method', () => {
+      expect(service.isFavorite).toBeDefined();
+    });
+
+    it('should return true', () => {
+      service.addFavorite(10);
+      const value = service.isFavorite(10);
+      expect(value).toBeTrue();
+    });
+
+    it('should return false', () => {
+      const value = service.isFavorite(10);
+      expect(value).toBeFalse();
+    });
+  });
 });

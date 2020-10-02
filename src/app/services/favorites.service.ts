@@ -29,6 +29,10 @@ export class FavoritesService {
     this.saveFavorites();
   }
 
+  private saveFavorites(): void {
+    localStorage.setItem(this.KEY, JSON.stringify(this._favorites));
+  }
+
   public removeFavorite(favorite: number): void {
     const index = this._favorites.findIndex(f => f === favorite);
 
@@ -39,7 +43,7 @@ export class FavoritesService {
     this.saveFavorites();
   }
 
-  private saveFavorites(): void {
-    localStorage.setItem(this.KEY, JSON.stringify(this._favorites));
+  public isFavorite(favorite: number): boolean {
+    return this._favorites.findIndex(f => f === favorite) !== -1;
   }
 }

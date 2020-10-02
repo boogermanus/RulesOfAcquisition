@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IRule } from '../interfaces/irule';
+import { FavoritesService } from '../services/favorites.service';
 
 @Component({
   selector: 'app-rule-view',
@@ -8,7 +9,8 @@ import { IRule } from '../interfaces/irule';
 })
 export class RuleViewComponent implements OnInit {
 
-  @Input() rule: IRule;
+  @Input()rule: IRule;
+  @Input()ruleIndex: number;
   favorite = false;
 
   get favoriteStyle(): any {
@@ -20,12 +22,21 @@ export class RuleViewComponent implements OnInit {
   get favoriteIcon(): string {
     return this.favorite ? 'star' : 'star_border';
   }
-  constructor() { }
+
+  constructor(private favoritesService: FavoritesService) { }
 
   ngOnInit(): void {
+    this.favorite = this.favoritesService.isFavorite(this.ruleIndex);
   }
 
-  onStarClick() {
+  onFavoriteClick() {
+
+    if (this.favorite) {
+      this.favoritesService.removeFavorite(this.ruleIndex);
+    }
+    else {
+      this.favoritesService.addFavorite(this.ruleIndex);
+    }
     this.favorite = !this.favorite;
   }
 
