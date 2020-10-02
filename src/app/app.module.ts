@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { RuleViewComponent } from './rule-view/rule-view.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { RuleListComponent } from './rule-list/rule-list.component';
+import { RuleFavoritesComponent } from './rule-favorites/rule-favorites.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RuleListComponent } from './rule-list/rule-list.component';
     RuleGeneratorComponent,
     RuleViewComponent,
     NavMenuComponent,
-    RuleListComponent
+    RuleListComponent,
+    RuleFavoritesComponent
   ],
   imports: [
     BrowserModule,
