@@ -8,9 +8,18 @@ import { IRule } from '../interfaces/irule';
 })
 export class RuleViewComponent implements OnInit {
 
-  @Input()rule: IRule;
+  @Input() rule: IRule;
   favorite = false;
 
+  get favoriteStyle(): any {
+    return {
+      color: this.favorite ? '#ef7f1a' : ''
+    };
+  }
+
+  get favoriteIcon(): string {
+    return this.favorite ? 'star' : 'star_border';
+  }
   constructor() { }
 
   ngOnInit(): void {
