@@ -7,7 +7,7 @@ import { RuleListComponent } from './rule-list/rule-list.component';
 const routes: Routes = [
   {path: 'list', component: RuleListComponent},
   {path: 'random', component: RuleGeneratorComponent},
-  {path: '', component: RuleGeneratorComponent}
+  {path: '**', redirectTo: '/random'}
 ];
 
 @NgModule({
