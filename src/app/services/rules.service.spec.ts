@@ -39,4 +39,18 @@ describe('RulesService', () => {
       expect(rule).toBeTruthy();
     });
   });
+
+  describe('getFavoriteRules()', () => {
+    it('should have method', () => {
+      expect(service.getFavoriteRules).toBeDefined();
+    });
+
+    it('should return rule at index zero', () => {
+      const data = service.getRules()[0];
+
+      const value = service.getFavoriteRules([0])[0];
+
+      expect(value).toEqual(data);
+    });
+  });
 });

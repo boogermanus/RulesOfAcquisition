@@ -11,12 +11,22 @@ export class RulesService {
   constructor() {
   }
 
-  getRules(): IRule[] {
+  public getRules(): IRule[] {
     return this._rules;
   }
 
-  getRandomRule(): IRule {
+  public getRandomRule(): IRule {
     const random = Math.floor(Math.random() * this._rules.length);
     return this._rules[random];
+  }
+
+  public getFavoriteRules(indices: number[]): IRule[] {
+    const data: IRule[] = [];
+
+    for (const index of indices) {
+      data.push(this._rules[index]);
+    }
+
+    return data;
   }
 }
