@@ -1,3 +1,4 @@
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RuleViewComponent } from './rule-view.component';
@@ -20,11 +21,41 @@ describe('RuleViewComponent', () => {
       number: 0,
       rule: '',
       source: '',
-    }
+    };
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('favoriteStyle', () => {
+    it('should be defined', () => {
+      expect(component.favoriteStyle).toBeDefined();
+    });
+
+    it('should return #ef7f1a when favorite is true', () => {
+      component.favorite = true;
+      expect(component.favoriteStyle.color).toEqual('#ef7f1a');
+    });
+
+    it('should return no color when favorite is false', () => {
+      expect(component.favoriteStyle.color).toEqual('');
+    });
+  });
+
+  describe('favoriteIcon', () => {
+    it('should be defined', () => {
+      expect(component.favoriteIcon).toBeDefined();
+    });
+
+    it('should return star when favorite is true', () => {
+      component.favorite = true;
+      expect(component.favoriteIcon).toEqual('star');
+    });
+
+    it('should return star_boder when favorite is false', () => {
+      expect(component.favoriteIcon).toEqual('star_border');
+    });
   });
 });
