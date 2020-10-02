@@ -26,10 +26,20 @@ export class FavoritesService {
     }
 
     this._favorites.push(newFavorite);
-    localStorage.setItem(this.KEY, JSON.stringify(this._favorites));
+    this.saveFavorites();
   }
 
-  public removeFavorite(newFavorite: number): void {
+  public removeFavorite(favorite: number): void {
+    const index = this._favorites.findIndex(f => f === favorite);
 
+    if (index !== -1) {
+      this._favorites.splice(index, 1);
+    }
+
+    this.saveFavorites();
+  }
+
+  private saveFavorites(): void {
+    localStorage.setItem(this.KEY, JSON.stringify(this._favorites));
   }
 }

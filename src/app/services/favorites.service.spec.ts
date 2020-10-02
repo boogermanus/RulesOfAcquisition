@@ -88,5 +88,14 @@ describe('FavoritesService', () => {
     it('should have method', () => {
       expect(service.removeFavorite).toBeDefined();
     });
+
+    it('should remove an existing favorite', () => {
+      service.addFavorite(1);
+      service.removeFavorite(1);
+
+      const data = service.getFavorites();
+
+      expect(data.length).toEqual(0);
+    });
   });
 });
