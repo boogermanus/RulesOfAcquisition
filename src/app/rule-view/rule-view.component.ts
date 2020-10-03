@@ -24,6 +24,9 @@ export class RuleViewComponent implements OnInit, OnChanges {
     return this.favorite ? 'star' : 'star_border';
   }
 
+  get favoriteTooltip(): string {
+    return this.favorite ? 'Remove favorite' : 'Add favorite';
+  }
   constructor(private favoritesService: FavoritesService) { }
 
   ngOnInit(): void {
