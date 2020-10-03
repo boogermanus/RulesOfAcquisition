@@ -11,6 +11,7 @@ import { RuleViewComponent } from './rule-view/rule-view.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { RuleListComponent } from './rule-list/rule-list.component';
 import { RuleFavoritesComponent } from './rule-favorites/rule-favorites.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RuleFavoritesComponent } from './rule-favorites/rule-favorites.componen
     RuleViewComponent,
     NavMenuComponent,
     RuleListComponent,
-    RuleFavoritesComponent
+    RuleFavoritesComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
