@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { IRule } from '../interfaces/irule';
 import { FavoritesService } from '../services/favorites.service';
 
@@ -7,7 +7,7 @@ import { FavoritesService } from '../services/favorites.service';
   templateUrl: './rule-view.component.html',
   styleUrls: ['./rule-view.component.css']
 })
-export class RuleViewComponent implements OnInit {
+export class RuleViewComponent implements OnInit, OnChanges {
 
   @Input()rule: IRule;
   @Input()ruleIndex: number;
@@ -26,6 +26,9 @@ export class RuleViewComponent implements OnInit {
   constructor(private favoritesService: FavoritesService) { }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(): void {
     this.favorite = this.favoritesService.isFavorite(this.ruleIndex);
   }
 
