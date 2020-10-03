@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IRule } from '../interfaces/irule';
+import { FavoritesService } from '../services/favorites.service';
+import { RulesService } from '../services/rules.service';
 
 @Component({
   selector: 'app-rule-favorites',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RuleFavoritesComponent implements OnInit {
 
-  constructor() { }
+  public favorites: IRule[] = [];
+  public hasFavorites = false;
+  constructor(private rulesService: RulesService,
+              private favoritesService: FavoritesService) { }
 
   ngOnInit(): void {
+    this.getFavorites();
   }
 
+  private getFavorites(): void {
+    const favorites = this.favoritesService.getFavorites();
+    this.favorites = this.rulesService.getFavoriteRules(favorites);
+    this.hasFavorites = this.favorites.length > 0;
+  }
 }

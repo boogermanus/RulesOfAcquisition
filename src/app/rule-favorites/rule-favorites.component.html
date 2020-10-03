@@ -1,1 +1,4 @@
-<p>rule-favorites works!</p>
+<p [hidden]="this.hasFavorites">No favorite rules</p>
+<div *ngFor="let favorite of favorites" [hidden]="!hasFavorites">
+    <app-rule-view [rule]="favorite" [ruleIndex]="favorite.ruleIndex"></app-rule-view>
+</div>
