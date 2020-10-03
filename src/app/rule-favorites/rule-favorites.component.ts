@@ -19,7 +19,7 @@ export class RuleFavoritesComponent implements OnInit {
     this.getFavorites();
   }
 
-  private getFavorites(): void {
+  public getFavorites(): void {
     const favorites = this.favoritesService.getFavorites();
     this.favorites = this.rulesService.getFavoriteRules(favorites);
     this.hasFavorites = this.favorites.length > 0;

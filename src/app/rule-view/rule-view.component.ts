@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { IRule } from '../interfaces/irule';
 import { FavoritesService } from '../services/favorites.service';
 
@@ -11,6 +11,7 @@ export class RuleViewComponent implements OnInit, OnChanges {
 
   @Input()rule: IRule;
   @Input()ruleIndex: number;
+  @Output()ruleRemoved: EventEmitter<any> = new EventEmitter();
   favorite = false;
 
   get favoriteStyle(): any {
@@ -36,6 +37,7 @@ export class RuleViewComponent implements OnInit, OnChanges {
 
     if (this.favorite) {
       this.favoritesService.removeFavorite(this.ruleIndex);
+      this.ruleRemoved.emit();
     }
     else {
       this.favoritesService.addFavorite(this.ruleIndex);
