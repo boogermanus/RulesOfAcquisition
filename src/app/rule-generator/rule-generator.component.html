@@ -1,4 +1,4 @@
-<app-rule-view [rule]="rule" [ruleIndex]="rule.ruleIndex"></app-rule-view>
+<app-rule-view [rule]="rule" [ruleIndex]="rule.ruleIndex ?? 0"></app-rule-view>
 <div class="d-flex justify-content-center">
     <button mat-raised-button color="primary" class="mt-4" (click)="random()">Random Rule</button>
 </div>

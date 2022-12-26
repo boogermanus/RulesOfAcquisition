@@ -9,8 +9,12 @@ import { FavoritesService } from '../services/favorites.service';
 })
 export class RuleViewComponent implements OnInit, OnChanges {
 
-  @Input()rule: IRule;
-  @Input()ruleIndex: number;
+  @Input()rule: IRule = {
+    source: "",
+    number: 0,
+    rule: "",
+  };
+  @Input()ruleIndex: number = 0;
   @Output()ruleRemoved: EventEmitter<any> = new EventEmitter();
   favorite = false;
 

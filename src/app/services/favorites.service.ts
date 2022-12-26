@@ -11,7 +11,12 @@ export class FavoritesService {
 
   public getFavorites(): number[] {
 
-    const data = JSON.parse(localStorage.getItem(this.KEY));
+    const storage = localStorage.getItem(this.KEY);
+
+    if(storage === null)
+      return [];
+
+    const data = JSON.parse(storage);
 
     if (data !== null) {
       this._favorites = data;
