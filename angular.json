@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "RulesOfAcquisition:build:production"
+              "buildTarget": "RulesOfAcquisition:build:production"
             },
             "development": {
-              "browserTarget": "RulesOfAcquisition:build:development"
+              "buildTarget": "RulesOfAcquisition:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "RulesOfAcquisition:build"
+            "buildTarget": "RulesOfAcquisition:build"
           }
         },
         "test": {
