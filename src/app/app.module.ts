@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,25 +13,18 @@ import { RuleListComponent } from './rule-list/rule-list.component';
 import { RuleFavoritesComponent } from './rule-favorites/rule-favorites.component';
 import { AboutComponent } from './about/about.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    RuleGeneratorComponent,
-    RuleViewComponent,
-    NavMenuComponent,
-    RuleListComponent,
-    RuleFavoritesComponent,
-    AboutComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MaterialModule,
-    FormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        RuleGeneratorComponent,
+        RuleViewComponent,
+        NavMenuComponent,
+        RuleListComponent,
+        RuleFavoritesComponent,
+        AboutComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
