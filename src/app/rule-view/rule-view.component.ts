@@ -3,9 +3,10 @@ import { IRule } from '../interfaces/irule';
 import { FavoritesService } from '../services/favorites.service';
 
 @Component({
-  selector: 'app-rule-view',
-  templateUrl: './rule-view.component.html',
-  styleUrls: ['./rule-view.component.css']
+    selector: 'app-rule-view',
+    templateUrl: './rule-view.component.html',
+    styleUrls: ['./rule-view.component.css'],
+    standalone: false
 })
 export class RuleViewComponent implements OnInit, OnChanges {
 

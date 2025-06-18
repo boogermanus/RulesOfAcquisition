@@ -4,9 +4,10 @@ import { FavoritesService } from '../services/favorites.service';
 import { RulesService } from '../services/rules.service';
 
 @Component({
-  selector: 'app-rule-favorites',
-  templateUrl: './rule-favorites.component.html',
-  styleUrls: ['./rule-favorites.component.css']
+    selector: 'app-rule-favorites',
+    templateUrl: './rule-favorites.component.html',
+    styleUrls: ['./rule-favorites.component.css'],
+    standalone: false
 })
 export class RuleFavoritesComponent implements OnInit {
 
