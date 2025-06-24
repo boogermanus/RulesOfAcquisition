@@ -1,5 +1,5 @@
-import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
 import { RuleViewComponent } from './rule-view.component';
 
@@ -7,7 +7,7 @@ describe('RuleViewComponent', () => {
   let component: RuleViewComponent;
   let fixture: ComponentFixture<RuleViewComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RuleViewComponent ]
     })
