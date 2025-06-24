@@ -3,9 +3,10 @@ import { IRule } from '../interfaces/irule';
 import { RulesService } from '../services/rules.service';
 
 @Component({
-  selector: 'app-rule-list',
-  templateUrl: './rule-list.component.html',
-  styleUrls: ['./rule-list.component.css']
+    selector: 'app-rule-list',
+    templateUrl: './rule-list.component.html',
+    styleUrls: ['./rule-list.component.css'],
+    standalone: false
 })
 export class RuleListComponent implements OnInit {
 

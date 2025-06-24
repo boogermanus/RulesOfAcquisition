@@ -1,14 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
 import { NavMenuComponent } from './nav-menu.component';
+import {MaterialModule} from "../material.module";
+import {provideRouter, RouterModule} from "@angular/router";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('NavMenuComponent', () => {
   let component: NavMenuComponent;
   let fixture: ComponentFixture<NavMenuComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavMenuComponent ]
+      declarations: [ NavMenuComponent ],
+      imports: [MaterialModule, RouterModule],
+      providers: [provideRouter([])]
     })
     .compileComponents();
   }));
