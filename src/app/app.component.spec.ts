@@ -1,15 +1,19 @@
 import {TestBed, waitForAsync} from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {provideRouter} from "@angular/router";
+import {provideRouter, RouterModule} from "@angular/router";
+import {NavMenuComponent} from "./nav-menu/nav-menu.component";
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
+        RouterModule
       ],
       declarations: [
         AppComponent,
+        NavMenuComponent
       ],
+      providers: [provideRouter([])]
     }).compileComponents();
   }));
 

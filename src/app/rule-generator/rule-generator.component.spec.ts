@@ -2,6 +2,8 @@ import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import { RulesService } from '../services/rules.service';
 
 import { RuleGeneratorComponent } from './rule-generator.component';
+import {RuleViewComponent} from "../rule-view/rule-view.component";
+import {MaterialModule} from "../material.module";
 
 describe('RuleGeneratorComponent', () => {
   let component: RuleGeneratorComponent;
@@ -9,7 +11,8 @@ describe('RuleGeneratorComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RuleGeneratorComponent ]
+      declarations: [ RuleGeneratorComponent, RuleViewComponent],
+      imports: [MaterialModule]
     })
     .compileComponents();
     TestBed.inject(RulesService);

@@ -2,6 +2,7 @@
 import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 
 import { RuleViewComponent } from './rule-view.component';
+import {MaterialModule} from "../material.module";
 
 describe('RuleViewComponent', () => {
   let component: RuleViewComponent;
@@ -9,7 +10,8 @@ describe('RuleViewComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ RuleViewComponent ]
+      declarations: [ RuleViewComponent ],
+      imports: [MaterialModule]
     })
     .compileComponents();
   }));
